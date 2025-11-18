@@ -1,0 +1,376 @@
+
+:root {
+    --color-primario-oscuro: #2C3E50;
+    --color-primario-claro: #34495E;
+    --color-fondo: #ECF0F1;
+    --color-blanco: #FFFFFF;
+    --color-texto: #333740;
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --borde-radio: 8px;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primario-oscuro);
+    font-weight: 700; /* Títulos más definidos */
+}
+
+/* Navbar */
+.navbar.bg-dark {
+    background-color: var(--color-primario-oscuro) !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Tarjetas (Cards) */
+.card {
+    border: none; /* Quitamos el borde por defecto */
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Tablas */
+.table {
+    margin-bottom: 0; /* Quitamos margen inferior dentro de la tarjeta */
+}
+
+.table thead th {
+    color: var(--color-primario-claro);
+    font-weight: 600;
+    border-bottom-width: 2px;
+}
+
+.table td, .table th {
+    vertical-align: middle; /* Centra verticalmente el contenido de las celdas */
+}
+
+/* Badges (insignias de estado) */
+.badge.bg-warning {
+    color: #333 !important; /* Mejora legibilidad del texto en amarillo */
+}
+.badge {
+    font-size: 0.8rem;
+    padding: 0.5em 0.75em;
+    font-weight: 600;
+}
+
+/* Formularios */
+.form-label {
+    font-weight: 600;
+    color: var(--color-primario-claro);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-primario-oscuro);
+    box-shadow: 0 0 0 0.25rem rgba(44, 62, 80, 0.25);
+}
+
+/* Botones */
+.btn {
+    border-radius: var(--borde-radio);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primario-claro);
+    border-color: var(--color-primario-claro);
+}
+.btn-primary:hover {
+    background-color: var(--color-primario-oscuro);
+    border-color: var(--color-primario-oscuro);
+}
+
+/* Footer (Pie de página) */
+footer.text-muted {
+    background-color: var(--color-blanco) !important; /* Fondo blanco para el footer */
+    border-top: 1px solid #ddd;
+    position: static; /* Cambiamos de 'fixed' a 'static' */
+    margin-top: 3rem; /* Lo separamos del contenido */
+    padding: 1.5rem 0;
+}
+
+/* --- Variables de Layout --- */
+:root {
+    --sidebar-width: 250px;
+    --sidebar-bg: #2C3E50; /* Azul Medianoche (el mismo del navbar anterior) */
+    --sidebar-text: #ECF0F1;
+    --sidebar-text-hover: #FFFFFF;
+    --sidebar-link-hover: #34495E;
+    --topbar-height: 60px;
+}
+
+body {
+    /* Evita el scroll horizontal */
+    overflow-x: hidden;
+}
+
+/* --- Estilos de la Barra Lateral --- */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh; /* Alto completo */
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 1rem;
+    z-index: 1030; /* Encima de casi todo */
+    transition: all 0.3s ease;
+}
+
+.sidebar-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--sidebar-link-hover);
+    margin-bottom: 1rem;
+    color: var(--sidebar-text-hover);
+}
+.sidebar-header i {
+    margin-right: 0.5rem;
+}
+
+.sidebar-nav a {
+    display: block;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--borde-radio);
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--sidebar-link-hover);
+    color: var(--sidebar-text-hover);
+}
+
+.sidebar-nav a i {
+    margin-right: 0.75rem;
+    width: 20px; /* Alinea los textos */
+}
+
+/* --- Estilos del Contenido Principal --- */
+.main-content {
+    /* Mueve el contenido a la derecha para dejar espacio a la sidebar */
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width)); /* Ancho restante */
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* --- Estilos de la Barra Superior --- */
+.topbar {
+    height: var(--topbar-height);
+    background-color: var(--color-blanco);
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+    /* Fija el topbar */
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    
+    /* Flexbox para alinear items */
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Espacio entre iconos */
+}
+
+.topbar-item {
+    font-size: 1.1rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.topbar-user {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primario-claro);
+}
+.topbar-user i {
+    font-size: 1.5rem;
+}
+
+/* Notificación */
+.notification-bell {
+    position: relative; /* Para posicionar el badge */
+}
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #E74C3C; /* Rojo */
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-blanco); /* Borde blanco */
+}
+
+/* --- Área de Contenido y Footer --- */
+.content-area {
+    /* Padding para que el contenido no quede pegado */
+    padding: 1.5rem;
+}
+
+.main-footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid #ddd;
+    background-color: var(--color-blanco);
+}
+
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+    /* Ocultamos la sidebar */
+    .sidebar {
+        left: -100%; /* Totalmente oculta */
+    }
+    
+
+    /* El contenido principal ocupa todo el ancho */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /* Oculta el texto del usuario en pantallas pequeñas */
+    .topbar-user span {
+        display: none;
+    }
+    /* --- Añadir al final de la sección @media de style.css --- */
+
+    /* Cuando la sidebar está activa en móvil */
+    .sidebar.active {
+        left: 0; /* La mostramos */
+        box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Le damos sombra */
+    }
+}
+/* --- Nueva Cabecera de Página --- */
+.page-title-box h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-primario-oscuro);
+}
+.page-title-box p {
+    font-size: 1rem;
+    color: #6c757d; /* text-muted */
+    margin: 0;
+    padding-top: 4px;
+}
+
+/* --- Estilos de la Tabla de Denuncias --- */
+.table-denuncias {
+    margin-bottom: 0; 
+}
+
+/* Cabecera de la tabla */
+.table-denuncias thead th {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-primario-claro);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+    background-color: #f8f9fa;
+    border-bottom-width: 2px;
+}
+
+/* Cuerpo de la tabla */
+.table-denuncias tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: var(--color-texto);
+    border-color: #eff2f7; /* Borde más suave */
+}
+
+.table-denuncias tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-denuncias tbody tr:hover {
+    background-color: rgba(44, 62, 80, 0.02); /* Hover muy sutil */
+}
+
+/* Badge de estado (mejora) */
+.table-denuncias .badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.4em 0.7em;
+    border-radius: var(--borde-radio);
+}
+
+/* --- Nuevos Botones de Acción (redondos) --- */
+.btn-action {
+    width: 36px;
+    height: 36px;
+    border-radius: 50% !important; /* Círculo */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+/* Espacio entre botones */
+.btn-action + .btn-action {
+    margin-left: 0.25rem;
+}
+
+.btn-action.btn-primary {
+    background-color: var(--color-primario-claro);
+    border-color: var(--color-primario-claro);
+}
+.btn-action.btn-primary:hover {
+    background-color: var(--color-primario-oscuro);
+    border-color: var(--color-primario-oscuro);
+}
+
+/* Ajuste responsivo para el botón de 'Nueva denuncia' */
+@media (max-width: 576px) {
+    .page-title-box {
+        margin-bottom: 1rem;
+    }
+    
+    /* Mueve el botón de 'Nueva' debajo del título en móviles */
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+}
