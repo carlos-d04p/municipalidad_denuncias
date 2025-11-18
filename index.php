@@ -7,6 +7,7 @@ spl_autoload_register(function($class) {
     } elseif (file_exists("Models/" . $class . ".php")) {
         require_once "Models/" . $class . ".php";
     } elseif (file_exists("config/" . $class . ".php")) {
+        require_once "config/" . $class . ".php";
     }
 });
 
@@ -15,6 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $url = !empty($_GET['url']) ? $_GET['url'] : 'denuncias/index'; 
+$arrUrl = explode("/", $url); 
 
 $controller = $arrUrl[0];
 $method = $arrUrl[1] ?? 'index'; 
